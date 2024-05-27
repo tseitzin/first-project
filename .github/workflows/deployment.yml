@@ -1,7 +1,15 @@
 name: Deploy project
 on: push
 jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get linter
+        uses: wearerequired/lint-action@v2
+      - name: Run linter
+        uses: npm run eslint
   test:
+    needs: lint
     runs-on: ubuntu-latest
     steps:
       - name: Get code
