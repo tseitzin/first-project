@@ -4,10 +4,10 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - name: Get linter
-        uses: wearerequired/lint-action@v2
       - name: Run linter
-        uses: npm run eslint
+        uses: wearerequired/lint-action@v2
+        with:
+          eslint: true
   test:
     needs: lint
     runs-on: ubuntu-latest
