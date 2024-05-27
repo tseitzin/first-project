@@ -1,8 +1,8 @@
 name: Output information
-on: workflow_dispatch
+on: issues
 jobs:
   info:
     runs-on: ubuntu-latest
     steps:
       - name: Output GitHub context
-        run: echo echo "${{ toJson(github) }}"
+        run: echo "${{ toJson(github.event) }}"
